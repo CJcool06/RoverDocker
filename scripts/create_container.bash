@@ -12,7 +12,7 @@ mem="8g"
 xsock="/tmp/.X11-unix"
 xauth="/tmp/.docker.xauth"
 
-docker run -it \
+docker create -it \
     --name="rover_env" \
     --user=root \
     --privileged \
