@@ -22,6 +22,7 @@ docker create -it \
     --volume="/etc/shadow:/etc/shadow:ro" \
     --volume=$(pwd)/catkin_ws:/root/catkin_ws:rw \
     --volume=$(pwd)/scripts/docker_resources/setup_script.bash:/root/setup_script.bash \
+    --volume=$(pwd)/dependencies/ceres-solver-2.0.0.tar.gz:/root/ceres-solver-2.0.0.tar.gz \
     --volume=$xsock:$xsock:rw \
     --volume=$xauth:$xauth:rw \
     --env=XAUTHORITY=$xauth \

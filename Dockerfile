@@ -20,10 +20,20 @@ RUN add-apt-repository -y "deb https://librealsense.intel.com/Debian/apt-repo $(
 RUN apt-get -y install librealsense2-dkms
 RUN apt-get -y install librealsense2-utils
 RUN apt-get -y install librealsense2-dev
-RUN apt-get install librealsense2-dbg
+RUN apt-get -y install librealsense2-dbg
 RUN apt-get -y install ros-noetic-realsense2-camera
 RUN apt-get -y install ros-noetic-rgbd-launch
 RUN apt-get -y install ros-noetic-joy
+
+# VINS dependencies
+# -- Ceres
+# RUN cd ~/
+# RUN tar zxf dependencies/ceres-solver-2.0.0.tar.gz
+RUN apt-get -y install make
+RUN apt-get -y install libgoogle-glog-dev libgflags-dev
+RUN apt-get -y install libatlas-base-dev
+RUN apt-get -y install libeigen3-dev
+RUN apt-get -y install libsuitesparse-dev
 
 # Initialise rosdep
 RUN rosdep init
