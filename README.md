@@ -31,12 +31,25 @@ make run
 
 You're now ready to go.  
 
-## Run Instructions
+
+## Run Instructions (Dataset)
+Download a dataset from http://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets.  
+
+Run each of these commands in a separate bash instance.
+
+1. `roscore`
+3. `rosrun vins vins_node ~/catkin_ws/src/VINS-Fusion/config/euroc/euroc_mono_imu_config.yaml`
+4. `rosrun loop_fusion loop_fusion_node ~/catkin_ws/src/VINS-Fusion/config/euroc/euroc_mono_imu_config.yaml`
+5. `roslaunch vins vins_rviz.launch`
+6. `rosbag play YOUR_DATASET_FOLDER/your_downloaded_dataset.bag`
+
+## Run Instructions (Camera)
 Run each of these commands in a separate bash instance.
 
 1. `roscore`
 2. `roslaunch realsense2_camera rs_camera.launch enable_infra1:=true enable_infra2:=true`
 3. `rosrun vins vins_node ~/catkin_ws/src/VINS-Fusion/config/realsense_d435/realsense_stereo_imu_config.yaml`
-4. `roslaunch vins vins_rviz.launch`
+4. `rosrun loop_fusion loop_fusion_node ~/catkin_ws/src/VINS-Fusion/config/realsense_d435/realsense_stereo_imu_config.yaml`
+5. `roslaunch vins vins_rviz.launch`
 
 If everything is working correctly, you should be seeing a point-cloud in rviz.  
