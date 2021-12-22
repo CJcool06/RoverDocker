@@ -21,8 +21,10 @@ docker create -it \
     --volume="/etc/passwd:/etc/passwd:ro" \
     --volume="/etc/shadow:/etc/shadow:ro" \
     --volume=$(pwd)/catkin_ws:/root/catkin_ws:rw \
-    --volume=$(pwd)/scripts/docker_resources/setup_script.bash:/root/setup_script.bash \
-    --volume=$(pwd)/dependencies/ceres-solver-2.0.0.tar.gz:/root/ceres-solver-2.0.0.tar.gz \
+    --volume=$(pwd)/scripts/docker_resources/setup_script.bash:/root/scripts/setup_script.bash \
+    --volume=$(pwd)/dependencies/ceres-solver-2.0.0.tar.gz:/root/dependencies/ceres-solver-2.0.0.tar.gz \
+    --volume=$(pwd)/scripts/install_ceres.bash:/root/scripts/install_ceres.bash \
+    --volume=$(pwd)/scripts/install_vins.bash:/root/scripts/install_vins.bash \
     --volume=$xsock:$xsock:rw \
     --volume=$xauth:$xauth:rw \
     --env=XAUTHORITY=$xauth \
@@ -32,6 +34,7 @@ docker create -it \
     --cpus=$cpus \
     --memory=$mem \
     --gpus all \
+    -e NVIDIA_DRIVER_CAPABILITIES=all \
     --ipc=host \
     rover_env_img
 
