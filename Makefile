@@ -34,9 +34,12 @@ exec: open-display
 	-docker start $(DOCKER_CONTAINER)
 	docker exec -it $(DOCKER_CONTAINER) bash
 
-# Stop the container and remove it.
-destroy:
+# Start and enter the container.
+kill:
 	-docker kill $(DOCKER_CONTAINER)
+
+# Stop the container and remove it.
+destroy: kill
 	-docker rm $(DOCKER_CONTAINER)
 
 open-display:
