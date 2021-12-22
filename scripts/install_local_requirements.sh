@@ -8,6 +8,3 @@ sudo apt-get update
 sudo apt-get install nvidia-container-toolkit -y
 
 sudo systemctl restart docker
-
-# Catkin for installing vins
-sudo apt install catkin
