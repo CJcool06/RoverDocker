@@ -3,7 +3,7 @@ DOCKER_IMAGE_ROVER=rover_env_img
 DOCKER_CONTAINER=rover_env
 
 all:
-	echo "Choose from build, run, exec, or destroy."
+	echo "Choose from build, create, run, or destroy."
 
 # Builds the image.
 build:
@@ -11,7 +11,7 @@ build:
 
 
 # Creates a new container from the built image.
-run: destroy open-display
+create: destroy open-display
 	bash scripts/create_container.bash	# Creates container
 
 	# Realsense driver requires a failure before it connects to the camera,
@@ -26,15 +26,15 @@ run: destroy open-display
 	# docker exec -i $(DOCKER_CONTAINER) bash < scripts/install_ceres.bash
 	# docker exec -i $(DOCKER_CONTAINER) bash < scripts/install_vins.bash
 
-	make exec
+	make run
 
 
 # Start and enter the container.
-exec: open-display
+run: open-display
 	-docker start $(DOCKER_CONTAINER)
 	docker exec -it $(DOCKER_CONTAINER) bash
 
-# Start and enter the container.
+# Stop the container.
 kill:
 	-docker kill $(DOCKER_CONTAINER)
 
