@@ -24,6 +24,8 @@ make create
 ```
 
 ### Setup Container
+This will install ceres, vins, and apriltag.  
+
 ```
 cd ../scripts && ./install_dependencies.bash && cd ../catkin_ws
 ```
