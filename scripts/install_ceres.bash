@@ -1,4 +1,5 @@
-# -- Ceres installation
+# Ceres Installation
+
 cd ~/dependencies
 tar zxf ../dependencies/ceres-solver-2.0.0.tar.gz
 mkdir ceres-bin && cd ceres-bin
