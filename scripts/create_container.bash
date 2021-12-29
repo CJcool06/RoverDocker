@@ -25,6 +25,8 @@ docker create -it \
     --volume=$(pwd)/dependencies/ceres-solver-2.0.0.tar.gz:/root/dependencies/ceres-solver-2.0.0.tar.gz \
     --volume=$(pwd)/scripts/install_ceres.bash:/root/scripts/install_ceres.bash \
     --volume=$(pwd)/scripts/install_vins.bash:/root/scripts/install_vins.bash \
+    --volume=$(pwd)/scripts/install_apriltags.bash:/root/scripts/install_apriltags.bash \
+    --volume=$(pwd)/scripts/install_dependencies.bash:/root/scripts/install_dependencies.bash \
     --volume=$xsock:$xsock:rw \
     --volume=$xauth:$xauth:rw \
     --env=XAUTHORITY=$xauth \
