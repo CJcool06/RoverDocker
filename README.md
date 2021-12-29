@@ -20,13 +20,12 @@ git clone https://github.com/CJcool06/RoverDocker.git
 ### Create Docker Container
 ```
 make build
-make run
+make create
 ```
 
 ### Setup Container
 ```
-../scripts/install_ceres.bash
-../scripts/install_vins.bash
+cd ../scripts && ./install_dependencies.bash && cd ../catkin_ws
 ```
 
 You're now ready to go.  
