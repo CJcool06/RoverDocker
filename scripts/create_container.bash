@@ -27,6 +27,7 @@ docker create -it \
     --volume=$(pwd)/scripts/install_vins.bash:/root/scripts/install_vins.bash \
     --volume=$(pwd)/scripts/install_rovertags.bash:/root/scripts/install_rovertags.bash \
     --volume=$(pwd)/scripts/install_dependencies.bash:/root/scripts/install_dependencies.bash \
+    --volume=$(pwd)/camera/toggle_emitter.py:/root/camera/toggle_emitter.py \
     --volume=$xsock:$xsock:rw \
     --volume=$xauth:$xauth:rw \
     --env=XAUTHORITY=$xauth \

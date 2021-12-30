@@ -13,8 +13,12 @@ RUN echo "source /root/scripts/setup_script.bash" >> /root/.bashrc
 # Install rosdep
 RUN apt-get -y install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
 
-# Install rviz
+# Install Pip
+RUN apt-get install -y python3-pip
+
+# Install necessary ROS packages
 RUN apt-get -y install ros-noetic-rviz
+RUN apt-get install ros-indigo-image-view
 
 # Install dependencies for RoverTags/OpenCV
 RUN apt-get install libcanberra-gtk-module libcanberra-gtk3-module
