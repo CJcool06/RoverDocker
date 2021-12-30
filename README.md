@@ -30,8 +30,6 @@ This will install Ceres, VINS, AprilTag, and RoverTags.
 cd ../scripts && ./install_dependencies.bash && cd ../catkin_ws
 ```
 
-You're now ready to go.  
-
 
 ## Run Instructions (Dataset)
 Download a dataset from http://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets.  
