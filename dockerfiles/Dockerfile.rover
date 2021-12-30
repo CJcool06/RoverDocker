@@ -13,8 +13,8 @@ RUN echo "source /root/scripts/setup_script.bash" >> /root/.bashrc
 # Install rosdep
 RUN apt-get -y install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
 
-# Install Pip
-RUN apt-get install -y python3-pip
+# Install Pip and Nano
+RUN apt-get install -y python3-pip nano
 
 # Install necessary ROS packages
 RUN apt-get -y install ros-noetic-rviz
@@ -22,6 +22,7 @@ RUN apt-get install ros-indigo-image-view
 
 # Install dependencies for RoverTags/OpenCV
 RUN apt-get install libcanberra-gtk-module libcanberra-gtk3-module
+RUN pip install pyrealsense2
 
 # Install realsense dependencies
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE 
