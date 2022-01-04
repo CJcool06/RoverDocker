@@ -7,8 +7,7 @@ RUN apt-get update
 
 # Setup script sourcing every time a new shell is launched.
 # RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
-RUN echo "source /root/scripts/setup_script.bash" >> /root/.bashrc
-# CMD ["bash", "source", "~/.bashrc"]
+RUN echo "source /root/scripts/setup_script.bash" >> ~/.bashrc
 
 # Install rosdep
 RUN apt-get -y install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
@@ -47,4 +46,5 @@ RUN apt-get -y install libsuitesparse-dev
 RUN rosdep init
 RUN rosdep update
 
-CMD ["bash"]
+# CMD ["bash"]
+ENTRYPOINT bash

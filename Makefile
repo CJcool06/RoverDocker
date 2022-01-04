@@ -13,19 +13,6 @@ build:
 # Creates a new container from the built image.
 create: destroy open-display
 	bash scripts/create_container.bash	# Creates container
-
-	# Realsense driver requires a failure before it connects to the camera,
-	# so I start the container, run the command that fails, kill it,
-	# then start it again.
-	# docker start ${DOCKER_CONTAINER}
-	# docker exec $(DOCKER_CONTAINER) rs-enumerate-devices
-	# docker kill $(DOCKER_CONTAINER)
-
-	# Install Ceres and VINS
-	# docker start ${DOCKER_CONTAINER}
-	# docker exec -i $(DOCKER_CONTAINER) bash < scripts/install_ceres.bash
-	# docker exec -i $(DOCKER_CONTAINER) bash < scripts/install_vins.bash
-
 	make run
 
 
