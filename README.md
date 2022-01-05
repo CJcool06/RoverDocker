@@ -30,8 +30,16 @@ This will install Ceres, VINS, AprilTag, and RoverTags.
 cd ../scripts && ./install_dependencies.bash && cd ../catkin_ws
 ```
 
+## Behavior Tree Run Instructions
+Run each of these commands in a separate bash instance.  
 
-## Run Instructions (Dataset)
+1. `roscore`
+2. `rosrun behavior_tree Comms.py`
+3. `rosrun behavior_tree Runner.py`
+
+At this stage you can use the `behavior_tree_comms` node terminal to input coordinates while the `behavior_tree_runner` node simulates the behavior tree states.  
+
+## VINS Run Instructions (Dataset)
 Download a dataset from http://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets.  
 
 Run each of these commands in a separate bash instance.
@@ -42,7 +50,9 @@ Run each of these commands in a separate bash instance.
 5. `roslaunch vins vins_rviz.launch`
 6. `rosbag play YOUR_DATASET_FOLDER/your_downloaded_dataset.bag`
 
-## Run Instructions (Camera)
+If everything is working correctly, you should be seeing a point-cloud in rviz.  
+
+## VINS Run Instructions (Camera)
 Run each of these commands in a separate bash instance.
 
 1. `roscore`
