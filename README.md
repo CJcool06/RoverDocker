@@ -37,7 +37,7 @@ Run each of these commands in a separate bash instance.
 2. `rosrun behavior_tree Comms.py`
 3. `rosrun behavior_tree Runner.py`
 
-At this stage you can use the `behavior_tree_comms` node terminal to input coordinates while the `behavior_tree_runner` node simulates the behavior tree states.  
+At this stage you can use the `behavior_tree_comms` node to input coordinates while the `behavior_tree_runner` node simulates the behavior tree states.  
 
 ## VINS Run Instructions (Dataset)
 Download a dataset from http://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets.  
