@@ -20,7 +20,6 @@ docker create -it \
     --volume="/etc/group:/etc/group:ro"   \
     --volume="/etc/passwd:/etc/passwd:ro" \
     --volume="/etc/shadow:/etc/shadow:ro" \
-    --volume=$(pwd)/catkin_ws:/root/catkin_ws:rw \
     --volume=$(pwd)/scripts/docker_resources/setup_script.bash:/root/scripts/setup_script.bash \
     --volume=$(pwd)/dependencies/ceres-solver-2.0.0.tar.gz:/root/dependencies/ceres-solver-2.0.0.tar.gz \
     --volume=$(pwd)/scripts/install_ceres.bash:/root/scripts/install_ceres.bash \

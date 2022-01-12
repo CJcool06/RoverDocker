@@ -1,2 +1,4 @@
 /datasets
 /catkin_ws
+dependencies/ceres-bin
+dependencies/ceres-solver-2.0.0
