@@ -19,6 +19,7 @@ RUN apt-get -y install python3-pip nano
 RUN apt-get -y install ros-noetic-rviz
 RUN apt-get -y install ros-noetic-image-view
 RUN apt-get -y install ros-noetic-vision-opencv
+RUN apt-get -y install ros-noetic-move-base
 
 # Install Catkin tools
 RUN apt-get -y install wget
